@@ -21,9 +21,14 @@ class App extends Component {
   deletePersonHandler = (index) => {
 
   }
-
+  togglePersonHandler = () => {
+    this.setState({
+      showPersons: !this.state.showPersons
+    })
+  }
   render() {
     let persons = null;
+    console.log(this.state.showPersons);
     if(this.state.showPersons){
       persons = (
         <div>
@@ -42,7 +47,7 @@ class App extends Component {
     }
     return (
       <div className={styles.App}>
-        <button>Switchname</button>
+        <button onClick={this.togglePersonHandler}>Switchname</button>
         {/* <header className={styles.AppHeader}>
           <img src={logo} className={styles.AppLogo} alt="logo" />
           <p>
